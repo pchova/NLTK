@@ -175,8 +175,30 @@ import nltk
 
 
 #8 Define a conditional frequency distribution over the Names corpus that
-## allows you to see which initial letters are more frequent for males vs females
+## allows you to see which initial letters are more frequent for males
+## vs females
 
+##names = nltk.corpus.names
+##cfd = nltk.ConditionalFreqDist(
+##            (fileid, name[0])
+##            for fileid in names.fileids()
+##            for name in names.words(fileid))
+##cfd.plot()
+
+
+#9 Pick a pair of texts and study the difference between them, in terms of
+## vocab, vocabulary richness, genre, etc. Can you find pairs of words
+## which have quite difference meanings across 2 texts, such as
+## monstrous in Moby Dick and Sense and Sensability
+
+from nltk.book import *
+print("\n", text1)
+print(text1.concordance("monstrous"))
+print(text1.similar("monstrous"))
+
+print("\n", text2)
+print(text2.concordance("monstrous"))
+print(text2.similar("monstrous"))
 
 
 
